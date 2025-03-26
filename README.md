@@ -61,5 +61,5 @@ learning para datos tabulares.
 
 ## Instalación y ejecución
 
-Ver [`src/README.txt`](src/README.txt).
+Ver [`src/README.md`](src/README.md).
 
