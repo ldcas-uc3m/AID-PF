@@ -1,0 +1,9 @@
+[project]
+name = "AID-PF"
+authors = [
+    { name = "Luis Daniel Casais Mezquida", email = "luisdaniel.casais@alumnos.uc3m.es" },
+]
+version = "0.1.0"
+readme = "README.txt"
+requires-python = ">=3.13"
+dependencies = []
