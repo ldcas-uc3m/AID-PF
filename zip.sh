@@ -1,8 +1,19 @@
 #!/bin/bash
 # Bash script to zip the whole project in order to make it deriverable
-# please make sure zip and texlive are installed
+# please make sure zip and typst are installed
 
 set -e  # exit on error
+
+if [ -x "$(command -v zip)" ]; then
+    echo "zip not found"
+    exit
+fi
+
+if [ -x "$(command -v typst)" ]; then
+    echo "typst not found"
+    exit
+fi
+
 
 OUTFILE=../aid-pf-100429021.zip
 [ -e $OUTFILE ] && rm $OUTFILE  # remove if exists already
@@ -11,7 +22,7 @@ OUTFILE=../aid-pf-100429021.zip
 # compile the report (and save it to root folder)
 echo "Compiling the report..."
 
-latexmk -cd -shell-escape -silent -outdir=report/build -pdf report/report.tex 
+typst compile report.typ
 cp report/build/report.pdf .
 
 
@@ -25,7 +36,7 @@ tmp_files=()  # files to delete
 # shopt -s dotglob  # include hidden files in glob search
 for file in *; do
     # exclude some files
-    if [[ $file == "uv.lock" ]] || [[ $file == "README.md" ]]; then
+    if [[ $file == "uv.lock" ]] || [[ $file == "README.md" ]] || [[ $file == *.csv]]; then
         continue
     fi
 
