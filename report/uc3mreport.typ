@@ -167,6 +167,8 @@
   show figure.where(kind: table): set figure.caption(position: top)
 
 
+  /* REFERENCES */
+
   show ref: set text(azuluc3m)
 
 
