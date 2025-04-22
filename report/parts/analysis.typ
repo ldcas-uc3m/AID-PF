@@ -15,13 +15,13 @@ El _dataset_ consta de las siguientes variables:
 - _FAVC_: Si la persona consume alimentos con alto contenido calórico
 - _FCVC_: Frecuencia de consumición de vegetales (escala de 1 a 3).
 - _NCP_: Número de comidas principales diarias
-- _CAEC_: Frecuencia de consumición de alimentos entre comidas (_Never_, _Sometimes_, _Frequently_, _Always_)
+- _CAEC_: Frecuencia de consumición de alimentos entre comidas (_no_, _Sometimes_, _Frequently_, _Always_)
 - _SMOKE_: Si la persona fuma
 - _CH2O_: Consumición diaria de agua (escala de 1 a 3)
 - _SCC_: Si la persona monitoriza las calorías que consume
 - _FAF_: Frecuencia de actividad física (escala de 0 a 3)
 - _TUE_: Tiempo gastado usando dispositivos electrónicos (escala de 0 a 3)
-- _CALC_: Frecuendia de consumición de alcohol (_Never_, _Sometimes_, _Frequently_, _Always_)
+- _CALC_: Frecuendia de consumición de alcohol (_no_, _Sometimes_, _Frequently_, _Always_)
 - _MTRANS_: Principal modo de transporte (_Automobile_, _Bike_, _Motorbike_, _Public_ _Transportation_, _Walking_)
 - _NObeyesdad_: Nivel de obesidad (_Insufficient Weight_, _Normal Weight_, _Overweight Level I_, _Overweight Level II_, _Obesity Type I_, _Obesity Type II_, _Obesity Type III_).
 
@@ -89,12 +89,12 @@ En la @tab:duplicate se puede observar con más detenimiento éste caso. Dado qu
 == Evaluación de las características
 A continuación evaluaremos las características para observar qué tipo de preprocesado es necesario realizar para mejorar el entrenamiento.
 
-=== Análisis univariable
-Primero, analizaremos las distintas características de forma aislada, y mencionaré las más relevantes #footnote([Para un resumen detallado, ver el _notebook_ `analysis.ipynb`.]).
+=== Análisis univariable <sec:analistis-univariable>
+Primero, analizaremos las distintas características de forma aislada, y mencionaré las más relevantes #footnote([Para un resumen detallado, ver el _notebook_ `analysis-preprocess.ipynb`.]).
 
 Hay características muy desbalanceadas, como son _family_history_with_overweight_ (_True_, 81.8%), _FAVC_ (_True_, 88.4%), _CAEC_ (_Sometimes_, 83.6%), _SMOKE_ (valor _False_, 97.9%), _SCC_ (_False_, 95.5%), _MTRANS_ (_Public_Transportation_, 74.8%). Sin embargo, la característica objetivo, _NObeyesdad_, está relativamente balanceada, como se puede observar en la @fig:target-distribution.
 
-Con respecto a las variables de rangos numéricos (_FCVC_, _NCP_, _CH20_, _FAF_, _TUE_), podemos observar que un pequeño porcentaje de los registros contienen valores entre los rangos discretos, lo cual puede ser debido a errores en la recogida de los datos. Un ejemplo de esto queda reflejado en la @fig:ch2o-distribution.
+Con respecto a las variables de rangos numéricos (_FCVC_, _NCP_, _CH2O_, _FAF_, _TUE_), podemos observar que un pequeño porcentaje de los registros contienen valores entre los rangos discretos, lo cual puede ser debido a errores en la recogida de los datos. Un ejemplo de esto queda reflejado en la @fig:ch2o-distribution.
 
 #figure(
   image(width: 65%, "../img/target_distribution.svg"),
@@ -120,3 +120,4 @@ La @fig:feature-correlation muestra la correlación entre las distintas caracter
   image(width: 65%, "../img/gender.svg"),
   caption: [Correlación entre el género y el tipo de obesidad]
 ) <fig:gender-correlation>
+
