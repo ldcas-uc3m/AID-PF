@@ -109,7 +109,7 @@ Con respecto a las variables de rangos numéricos (_FCVC_, _NCP_, _CH2O_, _FAF_,
 
 
 === Análisis multivariable
-La @fig:feature-correlation muestra la correlación entre las distintas características. Si nos fijamos en la columna de _NObeyesdad_, observamos que tanto el género, como el peso y el historial familiar con el peso están bastante relacionados con la obesidad. Los dos primeros tienen sentido, pero es el caso del género el que resulta extraño. Si observamos más detenidamente el tipo de obesidad por género (véase @fig:gender-correlation), podemos ver que en el caso de Obesidad de tipo II, no hay apenas mujeres, mientras que en el caso del tipo III, no hay apenas hombres.
+La @fig:feature-correlation muestra la correlación entre las distintas características. Si nos fijamos en la columna de _NObeyesdad_, observamos que tanto el género, como el peso y el historial familiar con el peso están bastante relacionados con la obesidad. Los dos primeros tienen sentido, pero es el caso del género el que resulta extraño. Si observamos más detenidamente el tipo de obesidad por género (véase @fig:gender-correlation), podemos ver que en el caso de Obesidad de tipo II, no hay apenas mujeres, mientras que en el caso del tipo III, no hay apenas hombres. Sin embargo, la característica está muy balanceada lo cual, al ser nuestro _target_, es algo muy beneficioso, porque implica que nuestras clases están balanceadas.
 
 #figure(
   image(width: 90%, "../img/feature_correlation.svg"),
