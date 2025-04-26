@@ -29,5 +29,6 @@ También se proporciona un archivo `requirements.txt` con las versiones exactas.
 
 ## Archivos proporcionados
 Se proporcionan los siguientes IPython Notebooks:
-- `analysis-preprocess.ipynb`: Se procede a realizar un análisis exploratorio de
-los datos, y al preprocesado de los mismos
+- `analysis.ipynb`: Se procede a realizar un análisis exploratorio de los datos
+- `models.ipynb`: Modelos básicos
+- `stacking.ipynb`: Uso de _stacking_
