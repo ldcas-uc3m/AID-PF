@@ -62,8 +62,19 @@ tmp_files+=( "README.txt" )
 cd ..
 
 
+# compile presentation
+echo "Compiling the presentation..."
+cd presentation
+
+marp --pdf presentation.md --allow-local-files
+cp presentation.pdf ..
+
+cd ..
+
+
+
 # zip it (excluding useless stuff)
-zip -FS -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* \*__pycache__/\* \*.venv/\* build/\* .vscode/\* LICENSE README.md src/\*
+zip -FS -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* \*__pycache__/\* \*.venv/\* build/\* .vscode/\* LICENSE README.md src/\* presentation/\* .ruff_cache/\*
 
 # # cleanup
 echo "Cleaning up..."
