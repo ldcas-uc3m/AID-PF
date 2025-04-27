@@ -1,11 +1,13 @@
 #import "../mymacros.typ": two-tone-table
 
+
 #let dataset = csv("../../data/obesity-prediction-dataset.csv")
 #let duplicates = csv("../../data/duplicates.csv")
 
 = Análisis exploratorio de datos
-Empezaremos con un análisis del _dataset_ elegido, para obtener posible información oculta en el mismo.
-Para éste análisis, se ha usado la librería de Python `ydata-profiling`#footnote([https://github.com/ydataai/ydata-profiling]).
+
+== Elección del _dataset_
+Para la realización de la práctica, se eligió el _dataset_ 'Obesity Prediction Dataset'#footnote([https://www.kaggle.com/datasets/adeniranstephen/obesity-prediction-dataset]), el cual contiene tiene como objetico estimar los los niveles de obesidad de individuos de México, Perú, y Colombia, dada información sobre sus hábitos alimenticios y físicos. Cuenta con 2111 registros.
 
 El _dataset_ consta de las siguientes variables:
 - _Gender_: Género (sexo) de la persona
@@ -27,6 +29,8 @@ El _dataset_ consta de las siguientes variables:
 
 
 == Estadísticas descriptivas
+Empezaremos con un análisis del _dataset_ elegido, para obtener posible información oculta en el mismo. Para éste análisis, se ha usado la librería de Python `ydata-profiling`#footnote([https://github.com/ydataai/ydata-profiling]).
+
 Las principales características de los datos quedan recogidas en la @tab:dataset-stats y @tab:dataset-types.
 
 
@@ -45,7 +49,7 @@ Las principales características de los datos quedan recogidas en la @tab:datase
     [Registros duplicados],[#(duplicates.len() - 1) (#total_duplicates)],
     [% duplicados],[#str(total_duplicates * 100 / (dataset.len() - 1)).slice(0, 4)%],
   ),
-  caption: [Estadísticas del _dataset_]
+  caption: [ Estadísticas del _dataset_. ]
 ) <tab:dataset-stats>
 
 #figure(
@@ -56,7 +60,7 @@ Las principales características de los datos quedan recogidas en la @tab:datase
     [Numéricas],[8],
     [Booleanas],[4],
   ),
-  caption: [Tipos de características]
+  caption: [ Tipos de características. ]
 ) <tab:dataset-types>
 
 
@@ -66,7 +70,7 @@ Analizando estos casos en la @fig:duplicates, vemos que la mayoría están dupli
 
 // SVGs optimizados con https://jakearchibald.github.io/svgomg/
 #figure(
-  image(width: 80%, "../img/duplicates.svg"),
+  image(width: 70%, "../img/duplicates.svg"),
   caption: "Cantidad de registros duplicados por registro duplicado"
 ) <fig:duplicates>
 
@@ -97,13 +101,13 @@ Hay características muy desbalanceadas, como son _family_history_with_overweigh
 Con respecto a las variables de rangos numéricos (_FCVC_, _NCP_, _CH2O_, _FAF_, _TUE_), podemos observar que un pequeño porcentaje de los registros contienen valores entre los rangos discretos, lo cual puede ser debido a errores en la recogida de los datos. Un ejemplo de esto queda reflejado en la @fig:ch2o-distribution.
 
 #figure(
-  image(width: 65%, "../img/target_distribution.svg"),
-  caption: [Distribución de la característica _NObeyesdad_]
+  image(width: 50%, "../img/target_distribution.svg"),
+  caption: [ Distribución de la característica _NObeyesdad_. ]
 ) <fig:target-distribution>
 
 #figure(
   image(width: 85%, "../img/ch2o_distribution.svg"),
-  caption: [Distribución de la característica _CH2O_]
+  caption: [ Distribución de la característica _CH2O_. ]
 ) <fig:ch2o-distribution>
 
 
@@ -113,11 +117,11 @@ La @fig:feature-correlation muestra la correlación entre las distintas caracter
 
 #figure(
   image(width: 90%, "../img/feature_correlation.svg"),
-  caption: [Correlación entre las distintas características]
+  caption: [ Correlación entre las distintas características. ]
 ) <fig:feature-correlation>
 
 #figure(
   image(width: 65%, "../img/gender.svg"),
-  caption: [Correlación entre el género y el tipo de obesidad]
+  caption: [ Correlación entre el género y el tipo de obesidad. ]
 ) <fig:gender-correlation>
 

@@ -21,7 +21,11 @@
   // bibliography_file: "references.yaml"
 )
 
-#include "parts/introduction.typ"
+#outline(
+  title: [Lista de Figuras],
+  target: figure.where(kind: image),
+)
+
 #include "parts/analysis.typ"
 #include "parts/methodology.typ"
 #include "parts/experimentation.typ"
