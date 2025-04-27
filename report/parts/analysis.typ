@@ -5,7 +5,7 @@
 
 = Análisis exploratorio de datos
 Empezaremos con un análisis del _dataset_ elegido, para obtener posible información oculta en el mismo.
-Para éste análisis, se ha usado la librería de Python `ydata-profiling` @ydata-profiling.
+Para éste análisis, se ha usado la librería de Python `ydata-profiling`#footnote([https://github.com/ydataai/ydata-profiling]).
 
 El _dataset_ consta de las siguientes variables:
 - _Gender_: Género (sexo) de la persona
@@ -90,7 +90,7 @@ En la @tab:duplicate se puede observar con más detenimiento éste caso. Dado qu
 A continuación evaluaremos las características para observar qué tipo de preprocesado es necesario realizar para mejorar el entrenamiento.
 
 === Análisis univariable <sec:analistis-univariable>
-Primero, analizaremos las distintas características de forma aislada, y mencionaré las más relevantes #footnote([Para un resumen detallado, ver el _notebook_ `analysis-preprocess.ipynb`.]).
+Primero, analizaremos las distintas características de forma aislada, y mencionaré las más relevantes #footnote([Para un resumen detallado, ver el _notebook_ `analysis.ipynb`.]).
 
 Hay características muy desbalanceadas, como son _family_history_with_overweight_ (_True_, 81.8%), _FAVC_ (_True_, 88.4%), _CAEC_ (_Sometimes_, 83.6%), _SMOKE_ (valor _False_, 97.9%), _SCC_ (_False_, 95.5%), _MTRANS_ (_Public_Transportation_, 74.8%). Sin embargo, la característica objetivo, _NObeyesdad_, está relativamente balanceada, como se puede observar en la @fig:target-distribution.
 

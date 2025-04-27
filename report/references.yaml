@@ -1,6 +1,0 @@
-ydata-profiling:
-  type: repository
-  title: ydata-profiling
-  url:
-    value: https://github.com/ydataai/ydata-profiling
-    date: 2025-04-21
